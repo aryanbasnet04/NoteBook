@@ -125,7 +125,7 @@ h6{
         width: 250px;
     }
 }
-@media (min-width:1000px) and (max-width:1150px) {
+/* @media (min-width:1000px) and (max-width:1150px) {
     container{
         flex-wrap: wrap;
     }
@@ -154,7 +154,7 @@ h6{
     position: relative;
     left:42px;
 }   
-}
+} */
 @media (min-width:600px) and (max-width:945px) {
     .container-2{
         width: 124px;
