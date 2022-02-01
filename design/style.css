@@ -332,6 +332,7 @@ h6{
     .p-second{
         position: relative;
         left: 8px;
+        top:1px;
     }
     /* .container-1:hover{
         width: 300px;
