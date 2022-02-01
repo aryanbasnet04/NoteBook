@@ -220,6 +220,9 @@ h6{
     .container{
         flex-direction: column;
     }
+    header{
+        width:110%
+    }
     .container-2{
         margin-left: -49px;
         width: 158px;
