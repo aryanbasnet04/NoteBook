@@ -17,6 +17,7 @@ header{
     position: sticky;
     top: 0px;
     width:100%;
+    min-width:120%;
 }
 nav ul{
     display: flex;
