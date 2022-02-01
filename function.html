@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteBook-Function</title>
+    <link rel="stylesheet" href="design/style.css">
+    <link rel="shortcut icon"
+        href="data:image/png;base64,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"
+        type="image/x-icon">
+    <style>
+        .qbasic {
+            color: red;
+        }
+
+        .function {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 class="first-heading">NoteBook</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="index">Home</a></li>
+                <li><a href="qbasic.html" class="qbasic"><b> Qbasic</b></a></li>
+                <li><a href="c-programming.html" class="c-language">C-programming</a></li>
+            </ul>
+        </nav>
+        <br>
+        <br>
+        <br>
+
+        <main>
+    </header>
+    <h1 class="h1-qbasic">Solved Problems</h1>
+    <nav class="nav-1">
+        <ul>
+            <li><a href="qbasic.html" class="sub">SUB</a></li>
+            <li><a href="function.html" class="function"><b>FUNCTION</b></a></li>
+        </ul>
+    </nav>
+    <br>
+    <br>
+
+    <!-- main-container -->
+    <div class="main-container">
+
+        <!-- box-1 -->
+        <div class="container-1-qbasic">
+            <p class="p-qbasic-first">1.WAP a program to calculate area of the rectangle.</p>
+            <p class="code-1">
+                <br>
+                DECLARE FUNCTION AREA (L, B)
+                <br>
+                CLS
+                <br>
+                INPUT "ENTER THE LENGTH"; L
+                <br>
+                INPUT "ENTER THE BREADTH"; B
+                <br>
+                PRINT "THE AREA OF THE RECTANGLE IS"; area(L, B)
+                <br>
+                END
+                <br>
+                <br>
+                FUNCTION AREA(L, B)
+                <br>
+                A = L * B
+                <br>
+                AREA = A
+                <br>
+                END FUNCTION
+                <br>
+            </p>
+        </div>
+
+
+        <!-- box-2 -->
+        <div class="container-1-qbasic">
+            <p class="p-qbasic-first">2. WAP TO FIND THE AREA OF THE FOUR WALLS.</p>
+            <p class="code-1">
+                <br>
+                <br>
+                DECLARE FUNCTION AREA(L,B,H)
+                <br>
+                CLS
+                <br>
+                INPUT “ENTER LENGTH” ; L
+                <br>
+                INPUT “ENTER BREADTH” ; B
+                <br>
+                INPUT “ENTER HEIGHT” ; H
+                <br>
+                PRINT “THE AREA OF FOUR WALLS= ” ; AREA(L,B,H)
+                <br>
+                END
+                <br>
+                <br>
+                FUNCTION AREA(L,B,H)
+                <br>
+                AREA=2*H*(L+B)
+                <br>
+                END FUNCTION
+                <br>
+            </p>
+        </div>
+
+        <!-- box-3 -->
+        <div class="container-1-qbasic">
+            <p class="p-qbasic-first">
+                3. WAP to calculate the circumference of a circle.</p>
+            <p class="code-1">
+                <br>
+                DECLARE FUNCTION CIR(A)
+                <br>
+                CLS
+                <br>
+                INPUT “ENTER RADIUS OF A CIRCLE”; R
+                <br>
+                PRINT “CIRCUMFERENCE IS” ; CIR(R)
+                <br>
+                END
+                <br>
+                <br>
+                FUNCTION CIR(A)
+                <br>
+                P=3.14
+                <br>
+                CIR=2*P*A
+                <br>
+                END FUNCTION
+                <br>
+            </p>
+        </div>
+
+        <!-- box-4 -->
+        <div class="container-1-qbasic">
+            <p class="p-qbasic-first">4.WAP to check whether the input number is divisible by 4 and 6 or not.
+            </p>
+            <p class="code-1">
+                <br>
+                DECLARE FUNCTION CHECK$(N)
+                <br>
+                CLS
+                <br>
+                INPUT “ENTER A NUMBER ” ; P
+                <br>
+                PRINT CHECK$(P)
+                <br>
+                END
+                <br>
+                <br>
+                FUNCTION CHECK$(P)
+                <br>
+                IF P MOD 4 =0 AND P MOD 6=0 THEN
+                <br>
+                CHECK$=”DIVISIBLE BY BOTH NUMBERS”
+                <br>
+                ELSE
+                <br>
+                CONV$=”NOT DIVISIBLE BY BOTH NUMBERS”
+                <br>
+                ENDIF
+                <br>
+                END FUNCTION
+                <br>
+            </p>
+        </div>
+
+        <!-- box-5 -->
+        <div class="container-1-qbasic">
+            <p class="p-qbasic-first">
+                5.Write a program to check whether the input number is positive, negative or zero.
+            </p>
+            <p class="code-1">
+                DECLARE FUNCTION CHECK$ (N)
+                <br>
+                CLS
+                <br>
+                INPUT “ENTER ANY NUMBER”; N
+                <br>
+                PRINT N; “IS “; CHECK$(N)
+                <br>
+                END
+                <br>
+                FUNCTION CHECK$ (N)
+                <br>
+                IF N > 0 THEN
+                <br>
+                CHECK$ = “POSITIVE NUMBER”
+                <br>
+                ELSEIF N < 0 THEN <br>
+                    CHECK$ = “NEGATIVE NUMBER”
+                    <br>
+                    ELSE
+                    <br>
+                    CHECK$ = “ZERO”
+                    <br>
+                    END IF
+                    <br>
+                    END FUNCTION
+                    <br>
+            </p>
+        </div>
+
+        <!-- box-6 -->
+        <div class="container-1-qbasic">
+            <p class="p-qbasic-first">
+                6. WAP that accepts three different numbers and returns the smallest one.
+            </p>
+            <p class="code-1">
+                <br>
+                DECLARE FUNCTION SMALL(A,B,C)
+                <br>
+                CLS
+                <br>
+                INPUT “ENTER FIRST NUBER” ; A
+                <br>
+                INPUT “ENTER SECOND NUMBER” ; B
+                <br>
+                INPUT “ENTER THIRD NUMBER” ; C
+                <br>
+                PRINT “THE SMALLEST NUMBER IS” ; SMALL(A,B,C)
+                <br>
+                END
+                <br>
+                FUNCTION SMALL(A,B,C)
+                <br>
+                IF A<B AND B<C THEN <br>
+                    SMALL=A
+                    <br>
+                    ELSE IF B<A AND A<C THEN <br>
+                        SMALL=B
+                        <br>
+                        ELSE
+                        <br>
+                        SMALL=C
+                        <br>
+                        END FUNCTION
+                        <br>
+            </p>
+        </div>
+
+        <!-- box-7 -->
+        <div class="container-to-edit">
+            <div class="container-1-qbasic" id="container-to-edit-1">
+                <p class="p-qbasic-first">
+                    7.WAP to check input number is Armstrong or not?
+                </p>
+                <p class="code-1">
+                    <br>
+                    DECLARE SUB ARM (N)
+                    <br>
+                    CLS
+                    <br>
+                    INPUT “ENTER ANY NUMBER”; N
+                    <br>
+                    CALL ARM (N)
+                    <br>
+                    END
+                    <br>
+                    <br>
+                    SUB ARM (N)
+                    <br>
+                    A = N
+                    <br>
+                    S = 0
+                    <br>
+                    WHILE N <> 0
+                        <br>
+                        R = N MOD 10
+                        <br>
+                        S = S + R ^ 3
+                        <br>
+                        N = N \ 10
+                        <br>
+                        WEND
+                        <br>
+                        IF A = S THEN
+                        <br>
+                        PRINT A; “IS ARMSTRONG NUMBER”
+                        <br>
+                        ELSE
+                        <br>
+                        PRINT A; “IS NOT ARMSTRONG NUMBER”
+                        <br>
+                        END IF
+                        <br>
+                        END SUB
+                        <br>
+                </p>
+            </div>
+            <!-- box-8 -->
+            <div class="container-1-qbasic" id="container-to-edit-2">
+                <p class="p-qbasic-first">8.WAP to input a string and count the total numbers of vowels.</p>
+                <p class="code-1">
+                    <br>
+                    DECLARE FUNCTION COUNT (S$)
+                    <br>
+                    CLS
+                    <br>
+                    INPUT “ENTER ANY STRING”; S$
+                    <br>
+                    PRINT “TOTAL NO. OF VOWELS= “; COUNT(S$)
+                    <br>
+                    END
+                    <br>
+                    <br>
+                    FUNCTION COUNT (S$)
+                    <br>
+                    VC = 0
+                    <br>
+                    FOR I = 1 TO LEN(S$)
+                    <br>
+                    B$ = MID$(S$, I, 1)
+                    <br>
+                    C$ = UCASE$(B$)
+                    <br>
+                    IF C$ = “A” OR C$ = “E” OR C$ = “I” OR C$ = “O” OR C$ = “U” THEN
+                    <br>
+                    VC = VC + 1
+                    <br>
+                    END IF
+                    <br>
+                    NEXT I
+                    <br>
+                    COUNT = VC
+                    <br>
+                    END FUNCTION
+                    <br>
+                </p>
+            </div>
+
+            <!-- box-9 -->
+            <div class="container-1-qbasic" id="container-to-edit-3">
+                <p class="p-qbasic-first">9.WAP to input string and display only consonants.</p>
+                <p class="code-1">
+                    <br>
+                    DECLARE FUNCTION DISPC (S$)
+                    <br>
+                    CLS
+                    <br>
+                    INPUT “ENTER ANY STRING”; S$
+                    <br>
+                    CC = DISPC(S$)
+                    <br>
+                    END
+                    <br>
+                    <br>
+                    FUNCTION DISPC(S$)
+                    <br>
+                    FOR I = 1 TO LEN(S$)
+                    <br>
+                    B$ = MID$(S$, I, 1)
+                    <br>
+                    C$ = UCASE$(B$)
+                    <br>
+                    IF C$ <> “A” AND C$ <> “E” AND C$ <> “I” AND C$ <> “O”
+                                    <br>
+                                    AND C$ <> “U” AND C$ <> ” ” AND C$ <> “.” THEN
+                                                <br>
+                                                PRINT B$
+                                                <br>
+                                                END IF
+                                                <br>
+                                                NEXT I
+                                                <br>
+                                                END FUNCTION
+                                                <br>
+                </p>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+</body>
+
+</html>
